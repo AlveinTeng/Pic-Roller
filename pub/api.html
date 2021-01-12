@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>API</title>
+    <link rel="stylesheet" type="text/css" href="api.css">
+ </head>
+
+ <body>
+
+  <div class="table__title">
+    <h3 class="api__title">APIs</h3>
+
+    <div class="nav__example"><span>See Examples!</span></div>
+
+    <div class="start__sub">
+      <span class="get__started">Get Started!</span>
+
+    </div>
+
+
+    <div class="start__sub">
+      <span class="start__html">HTML</span>
+    </div>
+
+    <pre class="api__box">
+      <code class="apiEx__box">
+  &lt;div id ="first-picRoller"&gt;
+    &lt;div class="display-area"&gt;
+      &lt;div class="pictures-wrapper-horizontal" data-pause="hover"&gt;
+        &lt;img src="./pictures/kobe.jpg" alt="" class="picture"&gt;
+        &lt;img src="./pictures/jordan.jpg" alt="" class="picture"&gt;
+        &lt;img src="./pictures/O'neal.jpg" alt="" class="picture"&gt;
+        &lt;img src="./pictures/iverson.jpg" alt="" class="picture"&gt;
+        &lt;img src="./pictures/westbrook.jpg" alt="" class="picture"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+      </code>
+    </pre>
+
+    <div class="start__sub">
+      <span class="start__html">CSS</span>
+    </div>
+
+    <pre class="api__box">
+      <code class="apiEx__box">
+  .display-area {
+    width: 900px;
+    overflow-x: hidden;
+    margin: auto;
+    overflow-y: hidden;
+  }
+  
+  .pictures-wrapper-horizontal{
+    display: flex;
+    transition: ease 0.5s;
+    max-width: 900px;
+    max-height: 400px;
+    flex-direction: row;
+  }
+
+  .picture {
+    height: 400px;
+    max-width: 900px;
+    max-height: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 40px;
+    flex: 900px 0 0;      
+  }
+      </code>
+    </pre>
+
+    <div class="start__sub">
+      <span class="start__html">JS</span>
+    </div>
+
+    <pre class="api__box">
+      <code class="apiEx__box">
+  var picRoller = new picRoller();
+  var displayRegion = document.getElementById('first-picRoller')
+  picRoller.horizontal(true)
+  picRoller.clickable(true)
+  picRoller.displayPictures(displayRegion1, 'square');
+  picRoller.addButtonText(0, 'Kobe')
+  picRoller.addButtonText(1, 'Jordan')
+  picRoller.addButtonText(2, 'Shaq')
+  picRoller.addButtonText(3, 'Iverson')
+  picRoller.addButtonText(4, 'Westbrook')
+      </code>
+    </pre>
+
+    <div class="start__sub">
+      <span class="start__html">Global Options Available</span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Default</th>
+        <th scope="col">Type</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">pictures</th>
+        <td>[]</td>
+        <td>Array</td>
+        <td>The array to store all the pictures you want to show</td>
+      </tr>
+      <tr>
+        <th scope="row">Picture_clickable</th>
+        <td>false</td>
+        <td>Boolean</td>
+        <td>The boolean to decide whether your pictures can be clicked</td>
+      </tr>
+      <tr>
+        <th scope="row">buttons</th>
+        <td>[]</td>
+        <td>Array</td>
+        <td>The arrray to store your buttons</td>
+      </tr>
+      <tr>
+        <th scope="row">autoPlay</th>
+        <td>false</td>
+        <td>Boolean</td>
+        <td>The boolean to decide whether your picture can be autoplayed</td>
+      </tr>
+      <tr>
+        <th scope="row">actived</th>
+        <td>0</td>
+        <td>Int</td>
+        <td>Store the index of current actived picture</td>
+      </tr>
+      <tr>
+        <th scope="row">clicked</th>
+        <td>0</td>
+        <td>Int</td>
+        <td>Store the index of the picrure/button being clicked</td>
+      </tr>
+      <tr>
+        <th scope="row">next</th>
+        <td>0</td>
+        <td>Int</td>
+        <td>Indicating the index of the next picture/button to be actived</td>
+      </tr>
+      <tr>
+        <th scope="row">moveHorizontal</th>
+        <td>false</td>
+        <td>Boolean</td>
+        <td>The boolean to decide whether the pictures are moving vertically or horizontally</td>
+      </tr>
+      <tr>
+        <th scope="row">speed</th>
+        <td>3000</td>
+        <td>Float</td>
+        <td>The value that decides how fast the pictures transimited</td>
+      </tr>
+      <tr>
+        <th scope="row">multipic</th>
+        <td>1</td>
+        <td>Int</td>
+        <td>The number of pictures that being transimitted at one time</td>
+      </tr>
+      <tr>
+        <th scope="row">hoverOnPause</th>
+        <td>false</td>
+        <td>Boolean</td>
+        <td>The boolean to decide whether an autoplayed scroller can be paused once the mose is on image</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="table__title">
+    <div class="start__sub">
+      <span class="start__html">Methods in picRoller</span>
+    </div>
+
+    <pre class="api__box">
+      <code class="apiEx__box">
+  \\ Add inner text of button
+  \\ button: int, text: string
+  picRoller.addButtonText(button, text)  	
+
+  \\ Set the speed of the picture transmitting
+  \\ speed: Float 
+  picRoller.setSpeed(speed)		
+  
+  \\ Set the number of pictures being transmitted at one time
+  \\ mutipic: int
+  picRoller.setMutiPic(mutipic)		
+  
+  \\ Decide whether the picture move horizontally or vertically
+  \\ horizontal: boolean
+  picRoller.horizontal(horizontal)		
+  
+  \\ Decide whether the picture can be auto played
+  \\ autoplay: boolean
+  picRoller.auto(autoplay)			
+  
+  \\ Decide whether the pictures can be clicked to move the pictures
+  \\ clickable: boolean
+  picRoller.clickable(clickable)
+  
+  \\ To enable the hover on pause effect on autoplayed pictures
+  picRoller.hoverPause()
+
+  \\ To display those pictures in the picture roller
+  \\ displayRegion: DOM element, buttonType: string
+  picRoller.displayPictures(displayRegion, buttonType)	
+      </code>
+    </pre>
+  </div>
+
+  <script type="text/javascript" src="api.js"></script>
+ </body>
+</html>

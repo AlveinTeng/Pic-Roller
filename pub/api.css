@@ -1,0 +1,98 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+table {
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+caption {
+  font-size: 1.6em;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+thead th {
+  font-weight: 400;
+  background: #8a97a0;
+  color: #FFF;
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #e8eeef;
+}
+
+th, td {
+  text-align: left;
+  padding: 20px;
+  font-weight: 300;
+}
+
+.table__title {
+  display: block;
+  margin: auto;
+  max-width: 1000px;
+  padding:5px;
+  width: 100%;
+}
+
+.api__title {
+  font-size: 45px;
+}
+
+.api__box {
+  flex: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-bottom: 50px;
+  background-color: #e8eeef;
+  border-radius: 4px;
+}
+
+.apiEx__box {
+  flex: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.get__started {
+  font-size: 29px;
+}
+
+.start__sub {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.nav__example {
+  max-width: 200px;
+  margin-left: 750px;
+  font-size: 20px;
+  font-family: cursive;
+  user-select: none;
+  border-radius: 4px;
+  border: 2px solid black;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  background-color: #8a97a0;
+}

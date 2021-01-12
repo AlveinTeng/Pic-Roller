@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Picture Scoller</title>
+    <link rel="stylesheet" type="text/css" href="examples_style.css">
+ </head>
+
+ <body>
+
+  <h1 class="header">
+    <span class="title">Pic_Roller.js</span>
+    <span class="subtitle">A JS library for developing a pretty picture scroller</span>
+  </h1>
+
+  <p class="description">
+    <div class="navi_bar">
+      <button class="API_button">API</button>
+  </div>
+
+
+  <div class="description__content examples__content__box">
+    <span class="container_box__title">Examples</span>
+    <div class="emp_content">
+      <span class="examples__description">As you can see in the first example,
+         you can either click the buttons or click the picture itself to move the pirctures.</span>
+      <!-- <div class="examples_container_box">
+      </div> -->
+    <div id="first-picRoller">
+        <div class="display-area">
+            <div class="pictures-wrapper-horizontal" data-pause="hover">
+                <img src="./pictures/kobe.jpg" alt="" class="picture">
+                <img src="./pictures/jordan.jpg" alt="" class="picture">
+                <img src="./pictures/O'neal.jpg" alt="" class="picture">
+                <img src="./pictures/iverson.jpg" alt="" class="picture">
+                <img src="./pictures/westbrook.jpg" alt="" class="picture">
+            </div>
+        </div>
+    </div>
+      <div class="navi_bar">
+        <button class="example1__js__btn">JS</button>
+        <button class="example1__html__btn">HTML</button>
+        <button class="example1__css__btn">CSS</button>
+      </div>
+  
+      <pre class="examples_container_box example1__js">
+        <code>
+const picRoller1 = new picRoller();
+const displayRegion1 = document.getElementById('first-picRoller')
+picRoller1.horizontal(true)
+picRoller1.clickable(true)
+picRoller1.displayPictures(displayRegion1, 'square');
+picRoller1.addButtonText(0, 'Kobe')
+picRoller1.addButtonText(1, 'Jordan')
+picRoller1.addButtonText(2, 'Shaq')
+picRoller1.addButtonText(3, 'Iverson')
+picRoller1.addButtonText(4, 'Westbrook')
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example1__html hidden">
+        <code> 
+&lt;div id ="first-picRoller"&gt;
+  &lt;div class="display-area"&gt;
+    &lt;div class="pictures-wrapper-horizontal" data-pause="hover"&gt;
+      &lt;img src="./pictures/kobe.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/jordan.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/O'neal.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/iverson.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/westbrook.jpg" alt="" class="picture"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example1__css hidden">
+        <code> 
+.display-area {
+  width: 900px;
+  overflow-x: hidden;
+  margin: auto;
+  overflow-y: hidden;
+}
+.pictures-wrapper-horizontal{
+  display: flex;
+  transition: ease 0.5s;
+  max-width: 900px;
+  max-height: 400px;
+  flex-direction: row;
+}
+.picture {
+  height: 400px;
+  max-width: 900px;
+  max-height: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 40px;
+  flex: 900px 0 0;      
+}
+          
+
+        </code>
+      </pre>
+    </div>
+
+    <div class="emp_content">
+      <span class="examples__description">Second example, in this example, the pictures are moving vertically with a different speed.
+         Also, the dots style has been changed to dots</span>
+      <!-- <div class="examples_container_box">
+      </div> -->
+      <div id="second-picRoller">
+        <div class="display-area">
+            <div class="pictures-wrapper-vertical" data-pause="hover" >
+                <img src="./pictures/img1.jpg" alt="" class="picture">
+                <img src="./pictures/img2.jpg" alt="" class="picture">
+                <img src="./pictures/img3.jpg" alt="" class="picture">
+                <img src="./pictures/img4.jpg" alt="" class="picture">
+                <img src="./pictures/img5.jpg" alt="" class="picture">
+            </div>
+        </div>
+    </div>
+  
+      <div class="navi_bar">
+        <button class="example2__js__btn">JS</button>
+        <button class="example2__html__btn">HTML</button>
+        <button class="example2__css__btn">CSS</button>
+      </div>
+  
+      <pre class="examples_container_box example2__js">
+        <code>
+var picRoller2 = new picRoller();
+var displayRegion2 = document.getElementById('second-picRoller')
+picRoller2.auto(true)
+picRoller2.setSpeed(2000)
+picRoller2.horizontal(false)
+// picRoller2.clickable(true)
+picRoller2.displayPictures(displayRegion2, 'dot');
+
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example2__html hidden">
+        <code> 
+&lt;div id="second-picRoller"&gt;
+  &lt;div class="display-area"&gt;
+    &lt;div class="pictures-wrapper-vertical" data-pause="hover" &gt;
+      &lt;img src="./pictures/img1.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img2.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img3.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img4.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img5.jpg" alt="" class="picture"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example2__css hidden">
+        <code> 
+.display-area {
+  width: 900px;
+  overflow-x: hidden;
+  margin: auto;
+  overflow-y: hidden;
+}
+.pictures-wrapper-horizontal{
+  display: flex;
+  transition: ease 0.5s;
+  max-width: 900px;
+  max-height: 400px;
+  flex-direction: row;
+}
+.picture {
+  height: 400px;
+  max-width: 900px;
+  max-height: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 40px;
+  flex: 900px 0 0;      
+}
+        </code>
+      </pre>
+    </div>
+
+    <div class="emp_content">
+      <span class="examples__description">Third example, in this example, you can see that the pictures auto played horizontally without text on buttons</span>
+      <!-- <div class="examples_container_box">
+      </div> -->
+      <div id="third-picRoller">
+        <div class="display-area">
+            <div class="pictures-wrapper-horizontal" data-pause="hover">
+                <img src="./pictures/kobe.jpg" alt="" class="picture">
+                <img src="./pictures/jordan.jpg" alt="" class="picture">
+                <img src="./pictures/O'neal.jpg" alt="" class="picture">
+                <img src="./pictures/iverson.jpg" alt="" class="picture">
+                <img src="./pictures/westbrook.jpg" alt="" class="picture">
+            </div>
+        </div>
+      </div>
+  
+      <div class="navi_bar">
+        <button class="example3__js__btn">JS</button>
+        <button class="example3__html__btn">HTML</button>
+        <button class="example3__css__btn">CSS</button>
+      </div>
+  
+      <pre class="examples_container_box example3__js">
+        <code>
+const picRoller3 = new picRoller();
+const displayRegion3 = document.querySelector('#third-picRoller')
+picRoller3.auto(true)
+picRoller3.horizontal(true)
+// picRoller3.clickable(true)
+picRoller3.displayPictures(displayRegion3, 'square');
+
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example3__html hidden">
+        <code> 
+&lt;div id ="third-picRoller"&gt;
+  &lt;div class="display-area"&gt
+    &lt;div class="pictures-wrapper-horizontal" data-pause="hover"&gt;
+      &lt;img src="./pictures/kobe.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/jordan.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/O'neal.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/iverson.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/westbrook.jpg" alt="" class="picture"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example3__css hidden">
+        <code> 
+.display-area {
+  width: 900px;
+  overflow-x: hidden;
+  margin: auto;
+  overflow-y: hidden;
+}
+.pictures-wrapper-horizontal{
+  display: flex;
+  transition: ease 0.5s;
+  max-width: 900px;
+  max-height: 400px;
+  flex-direction: row;
+}
+.picture {
+  height: 400px;
+  max-width: 900px;
+  max-height: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 40px;
+  flex: 900px 0 0;      
+}
+        </code>
+      </pre>
+    </div>
+    <div class="emp_content">
+      <span class="examples__description">Fourth example, The picture roller moves mutilpule pictures at one time. 
+         Also the speed has been changed</span>
+      <div class="examples_container_box">
+      </div>
+      <div id="forth-picRoller">
+        <div class="display-area">
+            <div class="pictures-wrapper-vertical" >
+                <img src="./pictures/img1.jpg" alt="" class="picture">
+                <img src="./pictures/img2.jpg" alt="" class="picture">
+                <img src="./pictures/img3.jpg" alt="" class="picture">
+                <img src="./pictures/img4.jpg" alt="" class="picture">
+                <img src="./pictures/img5.jpg" alt="" class="picture">
+            </div>
+        </div>
+    </div>
+  
+      <div class="navi_bar">
+        <button class="example4__js__btn">JS</button>
+        <button class="example4__html__btn">HTML</button>
+        <button class="example4__css__btn">CSS</button>
+      </div>
+  
+      <pre class="examples_container_box example4__js">
+        <code>
+const picRoller4 = new picRoller()
+const displayRegion4 = document.querySelector('#forth-picRoller')
+picRoller4.auto(true)
+picRoller4.horizontal(false)
+picRoller4.setMutiPic(2)
+picRoller4.setSpeed(2500)
+picRoller4.displayPictures(displayRegion4, 'dot')
+
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example4__html hidden">
+        <code> 
+&lt;div id="forth-picRoller"&gt;
+  &lt;div class="display-area"&gt;
+    &lt;div class="pictures-wrapper-vertical" data-pause="hover" &gt;
+      &lt;img src="./pictures/img1.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img2.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img3.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img4.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img5.jpg" alt="" class="picture"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example4__css hidden">
+        <code> 
+.display-area {
+  width: 900px;
+  overflow-x: hidden;
+  margin: auto;
+  overflow-y: hidden;
+}
+.pictures-wrapper-horizontal{
+  display: flex;
+  transition: ease 0.5s;
+  max-width: 900px;
+  max-height: 400px;
+  flex-direction: row;
+}
+.picture {
+  height: 400px;
+  max-width: 900px;
+  max-height: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 40px;
+  flex: 900px 0 0;      
+}
+  
+        </code>
+      </pre>
+    </div>
+    <div class="emp_content">
+      <span class="examples__description">Fifth example, 
+        now you can have a hover pause effect, which means when you put the mouse on, the pictures will pause the movement</span>
+      <div class="examples_container_box">
+      </div>
+      <div id="fifth-picRoller">
+        <div class="display-area">
+            <div class="pictures-wrapper-vertical" >
+                <img src="./pictures/img1.jpg" alt="" class="picture">
+                <img src="./pictures/img2.jpg" alt="" class="picture">
+                <img src="./pictures/img3.jpg" alt="" class="picture">
+                <img src="./pictures/img4.jpg" alt="" class="picture">
+                <img src="./pictures/img5.jpg" alt="" class="picture">
+            </div>
+        </div>
+    </div>
+  
+      <div class="navi_bar">
+        <button class="example5__js__btn">JS</button>
+        <button class="example5__html__btn">HTML</button>
+        <button class="example5__css__btn">CSS</button>
+      </div>
+  
+      <pre class="examples_container_box example5__js">
+        <code>
+const picRoller5 = new picRoller()
+const displayRegion5 = document.querySelector('#fifth-picRoller')
+picRoller5.auto(true)
+picRoller5.horizontal(false)
+// picRoller5.setMutiPic(1)
+picRoller5.setSpeed(2500)
+picRoller5.hoverPause()
+picRoller5.hoverPause()
+picRoller5.displayPictures(displayRegion5, 'dot')
+          
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example5__html hidden">
+        <code> 
+&lt;div id="fifth-picRoller"&gt;
+  &lt;div class="display-area"&gt;
+    &lt;div class="pictures-wrapper-vertical" data-pause="hover" &gt;
+      &lt;img src="./pictures/img1.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img2.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img3.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img4.jpg" alt="" class="picture"&gt;
+      &lt;img src="./pictures/img5.jpg" alt="" class="picture"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+  
+      <pre class="examples_container_box example5__css hidden">
+        <code> 
+.display-area {
+  width: 900px;
+  overflow-x: hidden;
+  margin: auto;
+  overflow-y: hidden;
+}
+.pictures-wrapper-horizontal{
+  display: flex;
+  transition: ease 0.5s;
+  max-width: 900px;
+  max-height: 400px;
+  flex-direction: row;
+}
+.picture {
+  height: 400px;
+  max-width: 900px;
+  max-height: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 40px;
+  flex: 900px 0 0;      
+}
+  
+        </code>
+      </pre>
+    </div>
+  </div>
+  </div>
+  <script defer type="text/javascript" src="examples.js"></script>
+  <script type="text/javascript" src="pic_roller.js"></script>
+ </body>
+</html>
