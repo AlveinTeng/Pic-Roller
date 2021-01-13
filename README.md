@@ -1,4 +1,4 @@
-# js-library-tengmin1
+# js-library-PicRoller
 
 The link to my js-library is: https://stormy-coast-37155.herokuapp.com
 The link to my documentation is: https://stormy-coast-37155.herokuapp.com/api.html
